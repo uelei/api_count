@@ -41,12 +41,6 @@ class CountResource(object):
                                     })
 
 
-    def on_post(self, request, response):
-
-        response.body = json.dumps({"ok": "ok"})
-
-
-
 api = falcon.API()
 
 api.add_route("/", CountResource())
