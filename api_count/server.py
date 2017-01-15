@@ -24,16 +24,16 @@ class CountResource(object):
 
         word = request.get_param("word", True)
 
-        case_sensitive = request.get_param_as_bool("ignore_case")
-        if case_sensitive is None:
-            case_sensitive = True
+        case_insensitive = request.get_param_as_bool("ignore_case")
+        if case_insensitive is None:
+            case_insensitive = True
 
         utils.check_url(url)
 
         text = utils.request_url(url)
 
         count = utils.word_count(word=word, text=text,
-                                 case_sensitive=case_sensitive)
+                                 case_insensitive=case_insensitive)
 
         response.body = json.dumps({"url": url,
                                     "word": word,

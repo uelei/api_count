@@ -8,9 +8,9 @@ import validators
 from api_count import exceptions
 
 
-def word_count(word, text, case_sensitive):
+def word_count(word, text, case_insensitive):
     """ Count word for a given text"""
-    if case_sensitive:
+    if case_insensitive:
         text = text.lower()
         word = word.lower()
 
