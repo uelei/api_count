@@ -16,11 +16,11 @@ pip install -r requirements.txt
 ## Runing Server
 
 ```bash
-run.sh
+bash run.sh
 ```
 
 ## Runing tests
 
 ```bash
-pytest .
+pytest test
 ```
