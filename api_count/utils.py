@@ -9,6 +9,7 @@ from api_count import exceptions
 
 
 def word_count(word, text, case_sensitive):
+    """ Count word for a given text"""
     if case_sensitive:
         text = text.lower()
         word = word.lower()
@@ -18,6 +19,7 @@ def word_count(word, text, case_sensitive):
 
 
 def request_url(url):
+    """" Request the given url and return it's text"""
     try:
         req = requests.get(url)
     except (requests.RequestException, requests.Timeout,
@@ -28,5 +30,6 @@ def request_url(url):
 
 
 def check_url(url):
+    """" Check if url is valid"""
     if not validators.url(url):
         raise exceptions.InvalidUrl()
