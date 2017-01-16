@@ -18,6 +18,19 @@ pip install -r requirements.txt
 ```bash
 bash run.sh
 ```
+## Usage
+
+arguments
+
+* word
+* url
+* ignore_case (optional) find all words ignoring case
+
+```bash
+curl --request GET \
+  --url 'http://127.0.0.1:8000/?word=president&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FDonald_Trump'
+
+```
 
 ## Runing tests
 
