@@ -5,6 +5,8 @@ Api to count words from a given url
 
 ## Setup
 
+the code was writing using python3, and all requirements is on requirements.txt
+
 ```bash
 virtualenv --python=/usr/local/bin/python3 env
 
