@@ -2,6 +2,7 @@
 
 __author__ = 'wesleywwerneck'
 
+import re
 import requests
 import validators
 
@@ -14,7 +15,7 @@ def word_count(word, text, case_insensitive):
         text = text.lower()
         word = word.lower()
 
-    count = text.count(word)
+    count = len(re.findall(r'\b{}\b'.format(word), text))
     return count
 
 
