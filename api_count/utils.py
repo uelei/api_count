@@ -16,7 +16,8 @@ def word_count(word, text, case_insensitive):
         text = text.lower()
         word = word.lower()
 
-    count = len(re.findall(r'\b{}\b'.format(word), text))
+    regex_find_word = re.compile(r'\b{}\b'.format(word))
+    count = len(re.findall(regex_find_word, text))
     return count
 
 
