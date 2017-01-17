@@ -5,6 +5,7 @@ __author__ = 'wesleywwerneck'
 import re
 import requests
 import validators
+from bs4 import BeautifulSoup
 
 from api_count import exceptions
 
@@ -27,7 +28,9 @@ def request_url(url):
             requests.TooManyRedirects, requests.HTTPError):
         raise exceptions.ErrorGettingUrl()
 
-    return req.text
+    html_doc = BeautifulSoup(req.text, 'html.parser')
+
+    return html_doc.get_text()
 
 
 def check_url(url):
