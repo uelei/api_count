@@ -21,6 +21,14 @@ def test_word_count():
 
     assert count == 1
 
+    count = utils.word_count(word, "gold", case_insensitive=True)
+
+    assert count == 0
+
+    count = utils.word_count(word, "bogolan", case_insensitive=True)
+
+    assert count == 0
+
 
 def test_checkurl():
     """
